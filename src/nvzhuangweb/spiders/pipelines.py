@@ -24,7 +24,7 @@ class NvzhuangPipeline(object):
             sale = item['sale']
             img = item['img']
             link = item['link']
-            logger.debug('\033[96m 保存商品：{}\033[0m'.format(title))
+            logger.debug('\033[96m 保存商品：{}\033[0m'.format(title.encode('utf-8')))
             try:
                 mogujie, created = Mogujie.objects.get_or_create(
                     title = title,

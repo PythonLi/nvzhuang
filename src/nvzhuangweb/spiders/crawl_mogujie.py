@@ -1,4 +1,4 @@
-# coidng:utf-8
+#coding:utf-8
 
 '''
 2017-7-15
@@ -35,6 +35,7 @@ class Mogujie(object):
         #import pdb
         #pdb.set_trace()
         for page in range(pages):
+            logger.debug('\033[96m 开始爬取第{}页 \033[0m'.format(page))
             url = 'http://list.mogujie.com/search?cKey=15&fcid=50004&action=skirt&page={page}'\
                 .format(page=page)
             res = requests.get(url, headers=HEADERS)
@@ -59,6 +60,7 @@ class Mogujie(object):
                     'link': link,
                 })
             self.pipeline.save_mogujie(item_list)
+            logger.debug('\033[96m 第{}页爬取完毕, 总共爬取{}商品 \033[0m'.format(page, len(item_list)))
 
 
 
