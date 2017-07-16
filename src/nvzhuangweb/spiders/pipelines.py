@@ -30,16 +30,15 @@ class NvzhuangPipeline(object):
                     title = title,
                     trade_item_id = trade_item_id,
                     price = price,
+                    sale = sale,
                     defaults={
                         'org_price': org_price,
-                        'sale': sale,
                         'img': img,
                         'link': link,
                     }
                 )
                 if not created:
                     mogujie.org_price = org_price
-                    mogujie.sale = sale
                     mogujie.img = img
                     mogujie.link = link
             except Exception as e:
