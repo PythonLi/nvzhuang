@@ -9,11 +9,11 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'nvzhuangweb.settings'
 django.setup()
 
-from dataweb.models import Mogujie
+from dataweb.models import Mogujie, Watch
 
 logger = logging.getLogger('mydata')
 
-class NvzhuangPipeline(object):
+class CrawlerPipeline(object):
 
     def save_mogujie(self, item_list):
         for item in item_list:

@@ -4,6 +4,7 @@ from django.contrib import admin
 from dataweb.models import Mogujie
 
 admin.AdminSite.site_header = '四月之家'
+admin.AdminSite.index_title = '购物网站'
 
 class MogujieAdmin(admin.ModelAdmin):
     list_display = ['title', 'price', 'org_price', 'sale', 'update_date', 'web_link']
